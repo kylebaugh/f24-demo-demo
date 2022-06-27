@@ -1,11 +1,16 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const path = require('path')
 
 app.use(express.json())
 app.use(cors())
 
-const {port} = process.env 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../index.html'))
+})
+
+const {port} = process.env.PORT 
 
 port ? SERVER_PORT = port : SERVER_PORT = 4444
 
