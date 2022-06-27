@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/index/html'))
 })
 
-const {port} = process.env.PORT 
+const port = process.env.PORT 
 
 port ? SERVER_PORT = port : SERVER_PORT = 4444
 
